@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
-public class SinavEkrani extends javax.swing.JFrame implements IDuzenleyici {
+public final class SinavEkrani extends javax.swing.JFrame implements IDuzenleyici {
     
     Timer t;
     
@@ -32,6 +32,7 @@ public class SinavEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
         sinavEkraniPaneli.setBackground(new java.awt.Color(102, 255, 204));
         sinavEkraniPaneli.setMinimumSize(new java.awt.Dimension(898, 652));
+        sinavEkraniPaneli.setPreferredSize(new java.awt.Dimension(898, 652));
         sinavEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         baslatButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

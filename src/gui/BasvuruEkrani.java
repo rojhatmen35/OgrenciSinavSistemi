@@ -1,6 +1,7 @@
 package gui;
 
 import database.IBilgiController;
+import database.transactions.AdminHesapBilgileri;
 import database.transactions.HesapBilgileri;
 import database.transactions.KullaniciBasvuru;
 import gui.ayarlar.ActionAyarlari;
@@ -10,7 +11,7 @@ import gui.ayarlar.IDuzenleyici;
 import gui.ayarlar.TextAyarlari;
 import java.awt.Color;
 
-public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici, IBilgiController {
+public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici, IBilgiController {
 
     private KullaniciBasvuru kullaniciBasvuruObject = null;
 
@@ -157,6 +158,13 @@ public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici, I
         TextAyarlari.setMaxLimit(telNoText, 11);
 
     }
+
+    @Override
+    public AdminHesapBilgileri getAdminHesapBilgileri() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
 
     public KullaniciBasvuru getKullaniciBasvuruObject() {
         if (this.kullaniciBasvuruObject == null) {
