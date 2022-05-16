@@ -32,9 +32,7 @@ public class HesapBilgileri extends DbVeriMerkezi implements IBilgiController {
     }
 
     public void girisYap(String musteriKimlik) {
-        this.kullaniciyiAl(musteriKimlik);
-        this.bakiyeAl();
-        this.faturalariAl();
+        this.kullaniciyiAl(musteriKimlik);      
     }
 
     //Kullanıcı hesap bilgilerini alma işlemleri
@@ -43,7 +41,7 @@ public class HesapBilgileri extends DbVeriMerkezi implements IBilgiController {
                 + " WHERE "
                 + "tc_no = '" + musteriKimlik + "'"
                 + " OR "
-                + "musteri_no = '" + musteriKimlik + "'";
+                + "ogrenci_no = '" + musteriKimlik + "'";
         try {
             super.statement = super.connection.createStatement();
             ResultSet rs = statement.executeQuery(query); //Yazdığımız query i çalıştırır
@@ -52,7 +50,7 @@ public class HesapBilgileri extends DbVeriMerkezi implements IBilgiController {
                 super.adSoyad = rs.getNString("ad_soyad");
                 super.tcNo = rs.getNString("tc_no");
                 super.telNo = rs.getNString("tel_no");
-                super.musteriNo = rs.getNString("musteri_no");
+                super.ogrenciNo = rs.getNString("ogrenci_no");
             }
         } catch (SQLException ex) {
             Logger.getLogger(HesapBilgileri.class.getName()).log(Level.SEVERE, null, ex);
@@ -60,45 +58,6 @@ public class HesapBilgileri extends DbVeriMerkezi implements IBilgiController {
 
     }
 
-    //Kullanıcı bakiye bilgilerini alma işlemi
-    private void bakiyeAl() {
-        if (this.bilgilerGecerliMi()) {
-            String query = "SELECT * FROM kullanici_bakiye"
-                    + " WHERE "
-                    + "kullanici_id = '" + super.getKullaniciId() + "'";
-            try {
-                super.statement = super.connection.createStatement();
-                ResultSet rs = statement.executeQuery(query); //Yazdığımız query i çalıştırır
-                while (rs.next()) {//  sorguyu dolaşır ve bize bir değer dönülmüş ise
-                    super.bakiye = rs.getDouble("bakiye");
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(HesapBilgileri.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
     
-    //Kullanıcı fatura bilgilerini alma işlemi
-    private void faturalariAl(){
-    if (this.bilgilerGecerliMi()) {
-            String query = "SELECT * FROM kullanici_faturalar"
-                    + " WHERE "
-                    + "kullanici_id = '" + super.getKullaniciId() + "'";
-            try {
-                super.statement = super.connection.createStatement();
-                ResultSet rs = statement.executeQuery(query); //Yazdığımız query i çalıştırır
-                while (rs.next()) {//  sorguyu dolaşır ve bize bir değer dönülmüş ise
-                    super.elektrikFaturasi=rs.getDouble("elektrik");
-                    super.suFaturasi=rs.getDouble("su");
-                    super.dogalgazFaturasi=rs.getDouble("dogalgaz");
-                    super.internetFaturasi=rs.getDouble("internet");
-                    
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(HesapBilgileri.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
     
-    }
-
 }

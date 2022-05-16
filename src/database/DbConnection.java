@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class DbConnection {//SuperClass
     private final String HOST="localhost";
     private final String PORT="3306";
-    private final String VERITABANI_ISMI="rojo_bank";
+    private final String VERITABANI_ISMI="ogrencisinavsistemi";
     private final String USER="root";
     private final String PASSWORD="";
     

@@ -1,20 +1,26 @@
-
 package gui;
 
+import database.IBilgiController;
+import database.transactions.HesapBilgileri;
+import database.transactions.KullaniciGiris;
 import gui.ayarlar.ActionAyarlari;
 import gui.ayarlar.ButonAyarlari;
+import gui.ayarlar.Dialogs;
+import gui.ayarlar.IDuzenleyici;
 import gui.ayarlar.TextAyarlari;
 import java.awt.Color;
 
+public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyici, IBilgiController {
 
-public class GirisEkrani extends javax.swing.JFrame {
+    private KullaniciGiris kullaniciGirisObject = null;
+    private final String KIMLIK_TEXT_ORIGINAL = "T.C. No/Ogrenci No";
+    private final String SIFRE_TEXT_ORIGINAL = "************";
 
-    
     public GirisEkrani() {
         initComponents();
+        getEdits();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,7 +46,7 @@ public class GirisEkrani extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SİGMA SINAV SİSTEMİNE HOŞGELDİNİZ");
-        girisEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 375, 50));
+        girisEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 50, 390, 50));
 
         kimlikText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         kimlikText.setForeground(new java.awt.Color(153, 153, 153));
@@ -146,6 +152,37 @@ public class GirisEkrani extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @Override
+    public void getEdits() {
+        this.setLocationRelativeTo(null);
+        girisEkraniPaneli.setFocusable(true);
+        kimlikText.setText(KIMLIK_TEXT_ORIGINAL);
+        sifreText.setText(SIFRE_TEXT_ORIGINAL);
+        TextAyarlari.setOnlyNumber(kimlikText); //Sadece sayı girebilsin
+
+    }
+
+    @Override
+    public boolean bilgilerGecerliMi() {
+        return !(this.kimlikText.getText().equals(this.KIMLIK_TEXT_ORIGINAL)
+                || String.valueOf(this.sifreText.getPassword()).equals(this.SIFRE_TEXT_ORIGINAL));
+
+    }
+
+    @Override
+    public HesapBilgileri getHesapBilgileri() {
+        return HesapBilgileri.getInstance();
+    }
+    
+    //KullaniciGiris sınıfının getter methodunu oluşturduk
+    public KullaniciGiris getKullaniciGirisObject() {
+        if (this.kullaniciGirisObject == null) {
+            kullaniciGirisObject = new KullaniciGiris();
+        }
+        return kullaniciGirisObject;
+    }
+
+
     private void kimlikTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_kimlikTextFocusGained
         TextAyarlari.setFocus(kimlikText, KIMLIK_TEXT_ORIGINAL);
     }//GEN-LAST:event_kimlikTextFocusGained
@@ -182,6 +219,18 @@ public class GirisEkrani extends javax.swing.JFrame {
 
     }//GEN-LAST:event_girisButonActionPerformed
 
+    private void girisYap(String musteriKimlik, String sifre) {
+        this.getKullaniciGirisObject().setMusteriKimlik(musteriKimlik);
+        this.getKullaniciGirisObject().setSifre(sifre);
+
+        if (getKullaniciGirisObject().girisBilgileriDogruMu()) {
+            ActionAyarlari.setVisible(this, new SinavEkrani());
+        } else {
+            Dialogs.ozelMesaj(this, "Giriş bilgileri doğru değil...");
+        }
+    }
+    
+    
     private void basvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basvurButonMouseEntered
         ButonAyarlari.setBg(basvurButon, Color.magenta);
     }//GEN-LAST:event_basvurButonMouseEntered
@@ -191,18 +240,18 @@ public class GirisEkrani extends javax.swing.JFrame {
     }//GEN-LAST:event_basvurButonMouseExited
 
     private void basvurButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basvurButonActionPerformed
-        ActionAyarlari.setVisible(this, new basvuruEkrani());
+        ActionAyarlari.setVisible(this, new BasvuruEkrani());
     }//GEN-LAST:event_basvurButonActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        SifreYenilemeEkrani sifreyenilemeekrani = new SifreYenilemeEkrani();
-        ActionAyarlari.setVisible(this, sifreyenilemeekrani);
-        sifreyenilemeekrani.getEskiSifreText().setEnabled(false);
+        
 
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+        SifreYenilemeEkrani sifreyenilemeekrani = new SifreYenilemeEkrani();
+        ActionAyarlari.setVisible(this, sifreyenilemeekrani);
+        sifreyenilemeekrani.getEskiSifreText().setEnabled(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**

@@ -1,19 +1,24 @@
-
 package gui;
 
+import database.IBilgiController;
+import database.transactions.HesapBilgileri;
+import database.transactions.KullaniciBasvuru;
+import gui.ayarlar.ActionAyarlari;
 import gui.ayarlar.ButonAyarlari;
 import gui.ayarlar.Dialogs;
+import gui.ayarlar.IDuzenleyici;
+import gui.ayarlar.TextAyarlari;
 import java.awt.Color;
 
+public class BasvuruEkrani extends javax.swing.JFrame implements IDuzenleyici, IBilgiController {
 
-public class BasvuruEkrani extends javax.swing.JFrame {
+    private KullaniciBasvuru kullaniciBasvuruObject = null;
 
-    
     public BasvuruEkrani() {
         initComponents();
+        getEdits();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -141,9 +146,75 @@ public class BasvuruEkrani extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_basvurButonActionPerformed
 
-    
+    @Override
+    public void getEdits() {
+        this.setLocationRelativeTo(null);//Ekranı ortalar
+        basvuruEkraniPaneli.setFocusable(true);//Panele focuslanır
+        TextAyarlari.setOnlyAlphabetic(adSoyadText);
+        TextAyarlari.setOnlyNumber(tcNoText);
+        TextAyarlari.setOnlyNumber(telNoText);
+        TextAyarlari.setMaxLimit(tcNoText, 11);
+        TextAyarlari.setMaxLimit(telNoText, 11);
+
+    }
+
+    public KullaniciBasvuru getKullaniciBasvuruObject() {
+        if (this.kullaniciBasvuruObject == null) {
+            kullaniciBasvuruObject = new KullaniciBasvuru();
+        }
+        return kullaniciBasvuruObject;
+    }
+
+    private void basvuruyuGerceklestir() {
+        //Kişisel Bilgiler
+        this.getKullaniciBasvuruObject().setAdSoyad(this.adSoyadText.getText().trim());
+        this.getKullaniciBasvuruObject().setTcNo(this.tcNoText.getText().trim());
+        this.getKullaniciBasvuruObject().setTelNo(this.telNoText.getText().trim());
+
+        //Güvenlik Bilgileri
+        this.getKullaniciBasvuruObject().setGuvenlikSorusu(String.valueOf(this.soruComboBox.getSelectedItem()));
+        this.getKullaniciBasvuruObject().setGuvenlikCevap(this.guvenlikCevapText.getText().trim());
+
+        //Sistem tarafından verilecek bilgiler
+        this.getKullaniciBasvuruObject().setOgrenciNo(this.randomOgrenciNo());
+        this.getKullaniciBasvuruObject().setSifre(this.randomSifre());
+
+        if (this.getKullaniciBasvuruObject().basvuruOnaylandiMi()) {
+            Dialogs.ozelMesaj(this, "Başvurunuz kabul edilmiştir..\n"
+                    + "Ogrenci Numaranız:" + this.getKullaniciBasvuruObject().getOgrenciNo() + "\nŞifreniz:" + this.getKullaniciBasvuruObject().getSifre());
+            ActionAyarlari.setVisible(this, new GirisEkrani());
+        } else {
+            Dialogs.ozelMesaj(this, "Başvurunuz kabul edilmemiştir..\nLütfen bilgileri kontrol ediniz");
+        }
+
+    }
+
+    private String randomOgrenciNo() {
+        String ogrenciNo;
+        do {
+            ogrenciNo = String.valueOf(1000000 + (int) (Math.random() * 9000000));
+        } while (this.getKullaniciBasvuruObject().musteriNoTablodaVarMi());
+        return ogrenciNo;
+    }
+
+    private String randomSifre() {
+        String sifre;
+        sifre = String.valueOf(1000 + (int) (Math.random() * 9000));
+        return sifre;
+    }
+
+    @Override
+    public boolean bilgilerGecerliMi() {
+        return TextAyarlari.textAlanlariDolumu(basvuruEkraniPaneli);
+    }
+
+    @Override
+    public HesapBilgileri getHesapBilgileri() {
+        return HesapBilgileri.getInstance();
+    }
+
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new BasvuruEkrani().setVisible(true);
