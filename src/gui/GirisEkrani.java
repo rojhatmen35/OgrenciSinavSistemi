@@ -1,6 +1,7 @@
 package gui;
 
 import database.IBilgiController;
+import database.transactions.AdminHesapBilgileri;
 import database.transactions.HesapBilgileri;
 import database.transactions.KullaniciGiris;
 import gui.ayarlar.ActionAyarlari;
@@ -173,7 +174,14 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
     public HesapBilgileri getHesapBilgileri() {
         return HesapBilgileri.getInstance();
     }
+
+    @Override
+    public AdminHesapBilgileri getAdminHesapBilgileri() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
+    
+
     //KullaniciGiris sınıfının getter methodunu oluşturduk
     public KullaniciGiris getKullaniciGirisObject() {
         if (this.kullaniciGirisObject == null) {
@@ -229,8 +237,8 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
             Dialogs.ozelMesaj(this, "Giriş bilgileri doğru değil...");
         }
     }
-    
-    
+
+
     private void basvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basvurButonMouseEntered
         ButonAyarlari.setBg(basvurButon, Color.magenta);
     }//GEN-LAST:event_basvurButonMouseEntered
@@ -244,7 +252,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
     }//GEN-LAST:event_basvurButonActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        
+        ActionAyarlari.setVisible(this, new AdminGirisEkrani());
 
     }//GEN-LAST:event_jLabel3MouseClicked
 

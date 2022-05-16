@@ -1,9 +1,9 @@
-
 package gui.ayarlar;
 
 import java.awt.Component;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.AttributeSet;
@@ -59,6 +59,25 @@ public class TextAyarlari {
         });
     }
 
+    //Labeldeki iconu/img'yi temizler
+    public static void labelBosalt(JLabel label) {
+        label.setIcon(null);
+    }
+
+    public static void textboxBosalt(JPanel panel) {
+        Component[] components = panel.getComponents(); //paneldeki tüm componentleri component dizisine aktarır
+        for (Component c : components) { //Component dizimi dolaş
+            if (c instanceof JTextField) {//Componentlerden textfieldleri seç
+                JTextField textField = (JTextField) c;//Textfieldi ata
+                if (!textField.getText().trim().equals("")) { //textfield boş ve aktif ise
+                    textField.setText("");
+                }
+
+            }
+        }
+
+    }
+
     /*Text limitlerini
     ayarlama
      */
@@ -79,12 +98,11 @@ public class TextAyarlari {
 
         });
     }
-    
-    public static boolean uzunlukSundanKucukMu(int lenght,String str){
-    return (str.length()<lenght);
+
+    public static boolean uzunlukSundanKucukMu(int lenght, String str) {
+        return (str.length() < lenght);
     }
 
-    
     /* 
     Text alanları kontrolü
      */
@@ -92,11 +110,11 @@ public class TextAyarlari {
         Component[] components = panel.getComponents(); //paneldeki tüm componentleri component dizisine aktarır
         for (Component c : components) { //Component dizimi dolaş
             if (c instanceof JTextField) {//Componentlerden textfieldleri seç
-               JTextField textField=(JTextField) c;//Textfieldi ata
-               if(textField.getText().trim().equals("") && textField.isEnabled()){ //textfield boş ve aktif ise
-               return false;
-               }
-               
+                JTextField textField = (JTextField) c;//Textfieldi ata
+                if (textField.getText().trim().equals("") && textField.isEnabled()) { //textfield boş ve aktif ise
+                    return false;
+                }
+
             }
         }
         return true;

@@ -104,6 +104,13 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    @Override
+    public AdminHesapBilgileri getAdminHesapBilgileri() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
+
     //Gettter and Setterlar
     public String getAdSoyad() {
         return adSoyad;
