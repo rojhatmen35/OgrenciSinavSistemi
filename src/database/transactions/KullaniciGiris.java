@@ -33,11 +33,11 @@ public class KullaniciGiris extends DbConnection implements IBilgiController {
     }
 
     private boolean girisBasariliMi() {
-        String query = "SELECT tc_no,musteri_no,sifre FROM kullanicilar"
+        String query = "SELECT tc_no,ogrenci_no,sifre FROM kullanicilar"
                 + " WHERE "
                 + "(tc_no = '" + this.musteriKimlik + "'"
                 + " OR "
-                + "musteri_no = '" + this.musteriKimlik + "')"
+                + "ogrenci_no = '" + this.musteriKimlik + "')"
                 + " AND "
                 + "sifre = '" + this.sifre + "'";
         try {

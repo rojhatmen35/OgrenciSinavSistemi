@@ -15,7 +15,7 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
     private String adSoyad = null, tcNo = null, telNo = null, guvenlikSorusu = null, guvenlikCevap = null;
 
     //Sistem tarafından oluşturulan veriler
-    private String musteriNo = null, sifre = null;
+    private String ogrenciNo = null, sifre = null;
 
     public boolean basvuruOnaylandiMi() {
         if (this.bilgilerGecerliMi()) {
@@ -49,10 +49,10 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
     }
 
     private void basvuruyuOnayla() {
-        String query = "INSERT INTO kullanicilar (musteri_no,sifre,"
+        String query = "INSERT INTO kullanicilar (ogrenci_no,sifre,"
                 + "ad_soyad,tc_no,tel_no,guvenlik_sorusu,guvenlik_cevap)"
                 + " VALUES("
-                + "'" + this.musteriNo + "',"
+                + "'" + this.ogrenciNo + "',"
                 + "'" + this.sifre + "',"
                 + "'" + this.adSoyad + "',"
                 + "'" + this.tcNo + "',"
@@ -71,7 +71,7 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
     }
 
     public boolean musteriNoTablodaVarMi() {
-        String query = "SELECT musteri_no FROM kullanicilar WHERE musteri_no='" + this.musteriNo + "'";
+        String query = "SELECT ogrenci_no FROM kullanicilar WHERE ogrenci_no='" + this.ogrenciNo + "'";
         try {
             super.statement = super.connection.createStatement();
             ResultSet rs = statement.executeQuery(query); //Yazdığımız query i çalıştırır
@@ -92,7 +92,7 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
                 || this.telNo == null
                 || this.guvenlikSorusu == null
                 || this.guvenlikCevap == null
-                || this.musteriNo == null
+                || this.ogrenciNo == null
                 || this.sifre == null
                 || TextAyarlari.uzunlukSundanKucukMu(11, this.tcNo)
                 || TextAyarlari.uzunlukSundanKucukMu(11, this.telNo));
@@ -145,14 +145,15 @@ public class KullaniciBasvuru extends DbConnection implements IBilgiController {
         this.guvenlikCevap = guvenlikCevap;
     }
 
-    public String getMusteriNo() {
-        return musteriNo;
+    public String getOgrenciNo() {
+        return ogrenciNo;
     }
 
-    public void setMusteriNo(String musteriNo) {
-        this.musteriNo = musteriNo;
+    public void setOgrenciNo(String ogrenciNo) {
+        this.ogrenciNo = ogrenciNo;
     }
 
+    
     public String getSifre() {
         return sifre;
     }

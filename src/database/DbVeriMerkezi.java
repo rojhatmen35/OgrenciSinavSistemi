@@ -4,9 +4,8 @@ package database;
 
 public class DbVeriMerkezi extends DbConnection {
     protected int kullaniciId=0;
-    protected String adSoyad,telNo,tcNo,musteriNo;
-    protected double bakiye;
-    protected double elektrikFaturasi,suFaturasi,dogalgazFaturasi,internetFaturasi;
+    protected String adSoyad,telNo,tcNo,ogrenciNo;
+    
 
     public int getKullaniciId() {
         return kullaniciId;
@@ -32,6 +31,14 @@ public class DbVeriMerkezi extends DbConnection {
         this.telNo = telNo;
     }
 
+    public String getOgrenciNo() {
+        return ogrenciNo;
+    }
+
+    public void setOgrenciNo(String ogrenciNo) {
+        this.ogrenciNo = ogrenciNo;
+    }
+
     public String getTcNo() {
         return tcNo;
     }
@@ -40,54 +47,5 @@ public class DbVeriMerkezi extends DbConnection {
         this.tcNo = tcNo;
     }
 
-    public String getMusteriNo() {
-        return musteriNo;
-    }
-
-    public void setMusteriNo(String musteriNo) {
-        this.musteriNo = musteriNo;
-    }
-
-    public double getBakiye() {
-        return bakiye;
-    }
-
-    public void setBakiye(double bakiye) {
-        this.bakiye = bakiye;
-    }
-
-    public double getElektrikFaturasi() {
-        return elektrikFaturasi;
-    }
-
-    public void setElektrikFaturasi(double elektrikFaturasi) {
-        this.elektrikFaturasi = elektrikFaturasi;
-    }
-
-    public double getSuFaturasi() {
-        return suFaturasi;
-    }
-
-    public void setSuFaturasi(double suFaturasi) {
-        this.suFaturasi = suFaturasi;
-    }
-
-    public double getDogalgazFaturasi() {
-        return dogalgazFaturasi;
-    }
-
-    public void setDogalgazFaturasi(double dogalgazFaturasi) {
-        this.dogalgazFaturasi = dogalgazFaturasi;
-    }
-
-    public double getInternetFaturasi() {
-        return internetFaturasi;
-    }
-
-    public void setInternetFaturasi(double internetFaturasi) {
-        this.internetFaturasi = internetFaturasi;
-    }
-    
-    
-     
+  
 }

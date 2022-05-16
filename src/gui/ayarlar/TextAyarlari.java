@@ -84,23 +84,7 @@ public class TextAyarlari {
     return (str.length()<lenght);
     }
 
-    /*para miktarı 
-    ayarları
-     */
-    public static int checkTheTextKeyReleased(JTextField textfield, int moneyLimit) {
-        String text = textfield.getText();
-        if (!text.equals("")) { //text boş değilse
-            int miktar = Integer.valueOf(text); //texti inegere dönüştürdü
-            if (miktar > moneyLimit) { //Çekilecek miktar 5000 den küçükse
-                miktar = moneyLimit;
-                textfield.setText(String.valueOf(miktar));
-            }
-            return miktar;
-        }
-        return 0;
-
-    }
-
+    
     /* 
     Text alanları kontrolü
      */
