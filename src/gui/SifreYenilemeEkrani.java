@@ -55,7 +55,7 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sifreYenilemePanel.setBackground(new java.awt.Color(51, 255, 204));
+        sifreYenilemePanel.setBackground(new java.awt.Color(204, 204, 204));
         sifreYenilemePanel.setMinimumSize(new java.awt.Dimension(730, 502));
         sifreYenilemePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,7 +119,13 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
         yeniSifreText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sifreYenilemePanel.add(yeniSifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 210, 30));
 
+        sifreYenileButon.setBackground(new java.awt.Color(153, 153, 255));
         sifreYenileButon.setText("Şifreyi Yenile");
+        sifreYenileButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                sifreYenileButonMouseEntered(evt);
+            }
+        });
         sifreYenileButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sifreYenileButonActionPerformed(evt);
@@ -160,6 +166,10 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
             ActionAyarlari.setVisible(this, new GirisEkrani());
         }
     }//GEN-LAST:event_sifreYenileButonActionPerformed
+
+    private void sifreYenileButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sifreYenileButonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sifreYenileButonMouseEntered
 
     /**
      * @param args the command line arguments

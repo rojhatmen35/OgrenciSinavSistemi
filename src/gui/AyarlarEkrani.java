@@ -28,7 +28,6 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
         ayarlarEkraniPanel = new javax.swing.JPanel();
         geriIcon = new javax.swing.JLabel();
-        kullaniciAdiSoyadiLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         telNoText = new javax.swing.JTextField();
         telNoDegistirIcon = new javax.swing.JLabel();
@@ -38,7 +37,7 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ayarlarEkraniPanel.setBackground(new java.awt.Color(204, 255, 102));
+        ayarlarEkraniPanel.setBackground(new java.awt.Color(204, 204, 204));
         ayarlarEkraniPanel.setMinimumSize(new java.awt.Dimension(730, 502));
         ayarlarEkraniPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -50,20 +49,16 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
         });
         ayarlarEkraniPanel.add(geriIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        kullaniciAdiSoyadiLabel.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        kullaniciAdiSoyadiLabel.setForeground(new java.awt.Color(255, 51, 51));
-        kullaniciAdiSoyadiLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kullaniciAdiSoyadiLabel.setText("Sayın [Kullanıcı Adı-Soyadı]");
-        ayarlarEkraniPanel.add(kullaniciAdiSoyadiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 500, 50));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Telefon Numaranız:");
-        ayarlarEkraniPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 170, 30));
+        ayarlarEkraniPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 220, 40));
 
+        telNoText.setBackground(new java.awt.Color(102, 102, 0));
         telNoText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         telNoText.setEnabled(false);
-        ayarlarEkraniPanel.add(telNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 170, 191, 30));
+        ayarlarEkraniPanel.add(telNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 210, 30));
 
         telNoDegistirIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         telNoDegistirIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,15 +68,17 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
         });
         ayarlarEkraniPanel.add(telNoDegistirIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 51, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Şifreniz:");
-        ayarlarEkraniPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 170, 30));
+        ayarlarEkraniPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 170, 30));
 
+        sifreText.setBackground(new java.awt.Color(102, 102, 0));
         sifreText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sifreText.setText("************");
         sifreText.setEnabled(false);
-        ayarlarEkraniPanel.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 191, 30));
+        ayarlarEkraniPanel.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 210, 30));
 
         sifreDegistirIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sifreDegistirIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -95,11 +92,11 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ayarlarEkraniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ayarlarEkraniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ayarlarEkraniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ayarlarEkraniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
         );
 
         pack();
@@ -164,7 +161,6 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
     private javax.swing.JLabel geriIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel kullaniciAdiSoyadiLabel;
     private javax.swing.JLabel sifreDegistirIcon;
     private javax.swing.JTextField sifreText;
     private javax.swing.JLabel telNoDegistirIcon;

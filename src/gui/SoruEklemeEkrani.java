@@ -74,13 +74,20 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        soruEklemeEkraniPaneli.setBackground(new java.awt.Color(102, 255, 255));
+        soruEklemeEkraniPaneli.setBackground(new java.awt.Color(0, 204, 204));
         soruEklemeEkraniPaneli.setMinimumSize(new java.awt.Dimension(898, 652));
         soruEklemeEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         soruEklemeEkraniPaneli.add(uniteNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 150, 32));
 
+        ekleButon.setBackground(new java.awt.Color(0, 0, 0));
         ekleButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ekleButon.setForeground(new java.awt.Color(242, 242, 242));
         ekleButon.setText("EKLE");
+        ekleButon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ekleButonMouseEntered(evt);
+            }
+        });
         ekleButon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ekleButonActionPerformed(evt);
@@ -239,6 +246,10 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
             Dialogs.bosOlamazMesaj(this);
         }
     }//GEN-LAST:event_ekleButonActionPerformed
+
+    private void ekleButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ekleButonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ekleButonMouseEntered
 
     public SoruKaydetme getSoruKaydetmeObject() {
         if (this.soruKaydetmeObject == null) {
