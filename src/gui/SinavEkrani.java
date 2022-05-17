@@ -30,7 +30,6 @@ public final class SinavEkrani extends javax.swing.JFrame implements IDuzenleyic
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sinavEkraniPaneli.setBackground(new java.awt.Color(102, 255, 204));
         sinavEkraniPaneli.setMinimumSize(new java.awt.Dimension(898, 652));
         sinavEkraniPaneli.setPreferredSize(new java.awt.Dimension(898, 652));
         sinavEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

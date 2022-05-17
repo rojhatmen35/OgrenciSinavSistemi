@@ -41,64 +41,77 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        basvuruEkraniPaneli.setBackground(new java.awt.Color(255, 255, 204));
+        basvuruEkraniPaneli.setBackground(new java.awt.Color(102, 102, 102));
         basvuruEkraniPaneli.setMinimumSize(new java.awt.Dimension(730, 502));
         basvuruEkraniPaneli.setPreferredSize(new java.awt.Dimension(730, 502));
         basvuruEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Ad-Soyad:");
         basvuruEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 46, 200, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Kişisel Bilgiler");
-        basvuruEkraniPaneli.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 0, 200, 40));
+        basvuruEkraniPaneli.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 200, 40));
 
+        adSoyadText.setBackground(new java.awt.Color(204, 204, 204));
         adSoyadText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         basvuruEkraniPaneli.add(adSoyadText, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 46, 310, 40));
 
+        tcNoText.setBackground(new java.awt.Color(204, 204, 204));
         tcNoText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         basvuruEkraniPaneli.add(tcNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 114, 310, 40));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("T.C. No:");
         basvuruEkraniPaneli.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 114, 200, 40));
 
+        telNoText.setBackground(new java.awt.Color(204, 204, 204));
         telNoText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         basvuruEkraniPaneli.add(telNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 182, 310, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Güvenlik Sorusu:");
         basvuruEkraniPaneli.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 274, 200, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Güvenlik Sorusu");
         basvuruEkraniPaneli.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 228, 200, 40));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Telefon No:");
         basvuruEkraniPaneli.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 182, 200, 40));
 
+        soruComboBox.setBackground(new java.awt.Color(204, 204, 204));
         soruComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         soruComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Evcil Hayvanınızın İsmi?", "En Sevdiğiniz Nesne_", "İlkokul Öğretmeninizin Adı Soyadı?", "Yaşamak İstediğiniz Yer?", "Ya da Rastgele Cümle Girin" }));
         basvuruEkraniPaneli.add(soruComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 274, 310, 40));
 
+        guvenlikCevapText.setBackground(new java.awt.Color(204, 204, 204));
         guvenlikCevapText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         basvuruEkraniPaneli.add(guvenlikCevapText, new org.netbeans.lib.awtextra.AbsoluteConstraints(243, 326, 313, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Cevap:");
         basvuruEkraniPaneli.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 326, 200, 40));
 
-        basvurButon.setBackground(new java.awt.Color(102, 153, 255));
+        basvurButon.setBackground(new java.awt.Color(0, 102, 102));
         basvurButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        basvurButon.setForeground(new java.awt.Color(204, 204, 204));
         basvurButon.setText("Başvur");
         basvurButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         basvurButon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,7 +127,7 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
                 basvurButonActionPerformed(evt);
             }
         });
-        basvuruEkraniPaneli.add(basvurButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 378, 125, 38));
+        basvuruEkraniPaneli.add(basvurButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 125, 38));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,7 +144,7 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
     }// </editor-fold>//GEN-END:initComponents
 
     private void basvurButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basvurButonMouseEntered
-        ButonAyarlari.setBg(basvurButon, Color.yellow);
+        ButonAyarlari.setBg(basvurButon, Color.black);
     }//GEN-LAST:event_basvurButonMouseEntered
 
     private void basvurButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basvurButonMouseExited

@@ -67,19 +67,20 @@ public final class AdminGirisEkrani extends javax.swing.JFrame implements IDuzen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        adminGirisEkraniPaneli.setBackground(new java.awt.Color(204, 255, 204));
+        adminGirisEkraniPaneli.setBackground(new java.awt.Color(102, 102, 102));
         adminGirisEkraniPaneli.setMinimumSize(new java.awt.Dimension(730, 502));
         adminGirisEkraniPaneli.setPreferredSize(new java.awt.Dimension(730, 502));
         adminGirisEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMİN/SORUMLU GİRİŞİNE HOŞGELDİNİZ");
-        adminGirisEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 50, 410, 50));
+        adminGirisEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 410, 50));
 
+        kimlikText.setBackground(new java.awt.Color(204, 204, 204));
         kimlikText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        kimlikText.setForeground(new java.awt.Color(153, 153, 153));
+        kimlikText.setForeground(new java.awt.Color(51, 51, 51));
         kimlikText.setVerifyInputWhenFocusTarget(false);
         kimlikText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -89,10 +90,11 @@ public final class AdminGirisEkrani extends javax.swing.JFrame implements IDuzen
                 kimlikTextFocusLost(evt);
             }
         });
-        adminGirisEkraniPaneli.add(kimlikText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 275, 50));
+        adminGirisEkraniPaneli.add(kimlikText, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 275, 50));
 
+        sifreText.setBackground(new java.awt.Color(204, 204, 204));
         sifreText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        sifreText.setForeground(new java.awt.Color(153, 153, 153));
+        sifreText.setForeground(new java.awt.Color(51, 51, 51));
         sifreText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 sifreTextFocusGained(evt);
@@ -101,10 +103,11 @@ public final class AdminGirisEkrani extends javax.swing.JFrame implements IDuzen
                 sifreTextFocusLost(evt);
             }
         });
-        adminGirisEkraniPaneli.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 275, 50));
+        adminGirisEkraniPaneli.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 275, 50));
 
-        girisButon.setBackground(new java.awt.Color(255, 153, 0));
-        girisButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        girisButon.setBackground(new java.awt.Color(51, 51, 51));
+        girisButon.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        girisButon.setForeground(new java.awt.Color(204, 204, 204));
         girisButon.setText("Giriş");
         girisButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         girisButon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -120,7 +123,7 @@ public final class AdminGirisEkrani extends javax.swing.JFrame implements IDuzen
                 girisButonActionPerformed(evt);
             }
         });
-        adminGirisEkraniPaneli.add(girisButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 131, 50));
+        adminGirisEkraniPaneli.add(girisButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 131, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,7 +156,7 @@ public final class AdminGirisEkrani extends javax.swing.JFrame implements IDuzen
     }//GEN-LAST:event_sifreTextFocusLost
 
     private void girisButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_girisButonMouseEntered
-        ButonAyarlari.setBg(girisButon, Color.cyan);
+        ButonAyarlari.setBg(girisButon, Color.black);
     }//GEN-LAST:event_girisButonMouseEntered
 
     private void girisButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_girisButonMouseExited

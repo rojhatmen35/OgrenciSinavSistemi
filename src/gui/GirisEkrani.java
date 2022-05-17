@@ -38,17 +38,18 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        girisEkraniPaneli.setBackground(new java.awt.Color(204, 255, 204));
+        girisEkraniPaneli.setBackground(new java.awt.Color(153, 153, 153));
         girisEkraniPaneli.setMinimumSize(new java.awt.Dimension(730, 502));
         girisEkraniPaneli.setPreferredSize(new java.awt.Dimension(730, 502));
         girisEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SİGMA SINAV SİSTEMİNE HOŞGELDİNİZ");
         girisEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 50, 390, 50));
 
+        kimlikText.setBackground(new java.awt.Color(204, 204, 204));
         kimlikText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         kimlikText.setForeground(new java.awt.Color(153, 153, 153));
         kimlikText.setVerifyInputWhenFocusTarget(false);
@@ -62,8 +63,8 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         });
         girisEkraniPaneli.add(kimlikText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 275, 50));
 
+        sifreText.setBackground(new java.awt.Color(204, 204, 204));
         sifreText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        sifreText.setForeground(new java.awt.Color(153, 153, 153));
         sifreText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 sifreTextFocusGained(evt);
@@ -74,8 +75,9 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         });
         girisEkraniPaneli.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 275, 50));
 
-        girisButon.setBackground(new java.awt.Color(255, 153, 0));
+        girisButon.setBackground(new java.awt.Color(102, 102, 102));
         girisButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        girisButon.setForeground(new java.awt.Color(242, 242, 242));
         girisButon.setText("Giriş");
         girisButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         girisButon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,12 +96,13 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         girisEkraniPaneli.add(girisButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 131, 50));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Halen daha kayıtlı değil misiniz?");
         girisEkraniPaneli.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, 50));
 
-        basvurButon.setBackground(new java.awt.Color(255, 153, 0));
+        basvurButon.setBackground(new java.awt.Color(102, 102, 102));
         basvurButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        basvurButon.setForeground(new java.awt.Color(153, 153, 153));
+        basvurButon.setForeground(new java.awt.Color(242, 242, 242));
         basvurButon.setText("Başvur");
         basvurButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         basvurButon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,7 +121,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         girisEkraniPaneli.add(basvurButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 131, 50));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Admin/Sorumlu Girişi");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,7 +132,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
         girisEkraniPaneli.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Şifrenizi mi unuttunuz?");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -208,7 +211,7 @@ public final class GirisEkrani extends javax.swing.JFrame implements IDuzenleyic
     }//GEN-LAST:event_sifreTextFocusLost
 
     private void girisButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_girisButonMouseEntered
-        ButonAyarlari.setBg(girisButon, Color.cyan);
+        ButonAyarlari.setBg(girisButon, Color.black);
     }//GEN-LAST:event_girisButonMouseEntered
 
     private void girisButonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_girisButonMouseExited
