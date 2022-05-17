@@ -27,9 +27,6 @@ public final class SinavEkrani extends javax.swing.JFrame implements IDuzenleyic
         sinavEkraniPaneli = new javax.swing.JPanel();
         baslatButon = new javax.swing.JButton();
         labelTime = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,18 +47,6 @@ public final class SinavEkrani extends javax.swing.JFrame implements IDuzenleyic
         labelTime.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         labelTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sinavEkraniPaneli.add(labelTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 210, 60));
-        sinavEkraniPaneli.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 810, 340));
-
-        jList1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Soru 1", "Soru 2", "Soru 3", "Soru 4", "Soru 5", "Soru 6", "Soru 7", "Soru 8", "Soru 9", "Soru 10" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane3.setViewportView(jList1);
-
-        sinavEkraniPaneli.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,9 +108,6 @@ public final class SinavEkrani extends javax.swing.JFrame implements IDuzenleyic
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton baslatButon;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelTime;
     private javax.swing.JPanel sinavEkraniPaneli;
     // End of variables declaration//GEN-END:variables
