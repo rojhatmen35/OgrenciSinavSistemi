@@ -69,7 +69,7 @@ public class TextAyarlari {
         for (Component c : components) { //Component dizimi dolaş
             if (c instanceof JTextField) {//Componentlerden textfieldleri seç
                 JTextField textField = (JTextField) c;//Textfieldi ata
-                if (!textField.getText().trim().equals("")) { //textfield boş ve aktif ise
+                if (!textField.getText().trim().equals("")) { //textfield boş değil ise
                     textField.setText("");
                 }
 

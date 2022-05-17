@@ -4,11 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/gui/SoruEklemeEkrani.java</file>
-            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/database/DbVeriMerkezi.java</file>
-            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/database/transactions/KullaniciBasvuru.java</file>
-            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/database/transactions/SoruKaydetme.java</file>
-            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/gui/ayarlar/TextAyarlari.java</file>
-            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/gui/BasvuruEkrani.java</file>
+            <file>file:/C:/Users/Rojo/Documents/NetBeansProjects/OgrenciSinavSistemi/src/gui/SinavEkrani.java</file>
         </group>
     </open-files>
 </project-private>
