@@ -38,10 +38,11 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
         guvenlikCevapText = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         basvurButon = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        basvuruEkraniPaneli.setBackground(new java.awt.Color(102, 102, 102));
+        basvuruEkraniPaneli.setBackground(new java.awt.Color(56, 246, 245));
         basvuruEkraniPaneli.setMinimumSize(new java.awt.Dimension(730, 502));
         basvuruEkraniPaneli.setPreferredSize(new java.awt.Dimension(730, 502));
         basvuruEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,7 +54,7 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
         basvuruEkraniPaneli.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 46, 200, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Kişisel Bilgiler");
         basvuruEkraniPaneli.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 200, 40));
@@ -83,7 +84,7 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
         basvuruEkraniPaneli.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 274, 200, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Güvenlik Sorusu");
         basvuruEkraniPaneli.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 228, 200, 40));
@@ -129,6 +130,14 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
         });
         basvuruEkraniPaneli.add(basvurButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 125, 38));
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/backIcon.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        basvuruEkraniPaneli.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,6 +169,10 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
         }
     }//GEN-LAST:event_basvurButonActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        ActionAyarlari.setVisible(this, new GirisEkrani());
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     @Override
     public void getEdits() {
         this.setLocationRelativeTo(null);//Ekranı ortalar
@@ -176,8 +189,6 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
     public AdminHesapBilgileri getAdminHesapBilgileri() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
 
     public KullaniciBasvuru getKullaniciBasvuruObject() {
         if (this.kullaniciBasvuruObject == null) {
@@ -255,6 +266,7 @@ public final class BasvuruEkrani extends javax.swing.JFrame implements IDuzenley
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JComboBox<String> soruComboBox;
     private javax.swing.JTextField tcNoText;
     private javax.swing.JTextField telNoText;

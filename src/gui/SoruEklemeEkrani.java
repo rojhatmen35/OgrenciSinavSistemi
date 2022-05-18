@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzenleyici, IBilgiController {
 
     private SoruKaydetme soruKaydetmeObject = null;
+
     public SoruEklemeEkrani() {
         initComponents();
         getEdits();
@@ -67,6 +68,7 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         imagePanel = new javax.swing.JScrollPane();
+        backIcon = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         open = new javax.swing.JMenuItem();
@@ -74,7 +76,7 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        soruEklemeEkraniPaneli.setBackground(new java.awt.Color(0, 204, 204));
+        soruEklemeEkraniPaneli.setBackground(new java.awt.Color(56, 246, 245));
         soruEklemeEkraniPaneli.setMinimumSize(new java.awt.Dimension(898, 652));
         soruEklemeEkraniPaneli.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         soruEklemeEkraniPaneli.add(uniteNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 150, 32));
@@ -83,6 +85,7 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
         ekleButon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ekleButon.setForeground(new java.awt.Color(242, 242, 242));
         ekleButon.setText("EKLE");
+        ekleButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ekleButon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ekleButonMouseEntered(evt);
@@ -169,7 +172,17 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
         imagePanel.setBackground(new java.awt.Color(102, 255, 255));
         soruEklemeEkraniPaneli.add(imagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 390));
 
+        backIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/backIcon.png"))); // NOI18N
+        backIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backIconMouseClicked(evt);
+            }
+        });
+        soruEklemeEkraniPaneli.add(backIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
+
         jMenu1.setText("File");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         open.setText("Open");
         open.addActionListener(new java.awt.event.ActionListener() {
@@ -218,22 +231,24 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
     }//GEN-LAST:event_uniteAdiTextActionPerformed
 
     JLabel label = new JLabel();
-    java.io.File f;
+    String f;
     private void openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         if (fileChooser.showOpenDialog(jMenu1) == JFileChooser.APPROVE_OPTION) {
-           f = fileChooser.getSelectedFile();
+            f = fileChooser.getSelectedFile().getAbsolutePath();
 
-            label.setIcon(new ImageIcon(f.toString()));
+            label.setIcon(new ImageIcon(f));
             label.setHorizontalAlignment(JLabel.CENTER);
-
             imagePanel.getViewport().add(label);
-
+            
+            this.getSoruKaydetmeObject().setSoruPath(TextAyarlari.convertStringToBinary(f));
         }
 
 
     }//GEN-LAST:event_openActionPerformed
 
+    
+    
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         TextAyarlari.labelBosalt(label);
     }//GEN-LAST:event_clearActionPerformed
@@ -251,38 +266,42 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
         // TODO add your handling code here:
     }//GEN-LAST:event_ekleButonMouseEntered
 
+    private void backIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backIconMouseClicked
+        ActionAyarlari.setVisible(this, new GirisEkrani());
+    }//GEN-LAST:event_backIconMouseClicked
+
     public SoruKaydetme getSoruKaydetmeObject() {
         if (this.soruKaydetmeObject == null) {
             soruKaydetmeObject = new SoruKaydetme();
         }
         return soruKaydetmeObject;
     }
-    
+
     private void basvuruyuGerceklestir() {
-        
+
         this.getSoruKaydetmeObject().setSinifDuzeyi(Integer.parseInt(this.sinifDuzeyiText.getText().trim()));
         this.getSoruKaydetmeObject().setUniteNo(Integer.parseInt(this.uniteNoText.getText().trim()));
-        this.getSoruKaydetmeObject().setKonuNo(Integer.parseInt(this.konuNoText.getText().trim()));  
+        this.getSoruKaydetmeObject().setKonuNo(Integer.parseInt(this.konuNoText.getText().trim()));
         this.getSoruKaydetmeObject().setSoruNo(Integer.parseInt(this.soruNoText.getText().trim()));
         this.getSoruKaydetmeObject().setKodNo(Integer.parseInt(this.kodNoText.getText().trim()));
-             
+
         this.getSoruKaydetmeObject().setDersinAdi(this.dersAdiText.getText().trim());
         this.getSoruKaydetmeObject().setUniteAdi(this.uniteAdiText.getText().trim());
         this.getSoruKaydetmeObject().setKonuAdi(this.konuAdiText.getText().trim());
         this.getSoruKaydetmeObject().setCevap(this.cevapText.getText().trim());
-        this.getSoruKaydetmeObject().setSoruPath(f.toString());
+       // this.getSoruKaydetmeObject().setSoruPath(f);
 
         if (this.getSoruKaydetmeObject().kayitOnaylandiMi()) {
             Dialogs.ozelMesaj(this, "Kayıt edilmiştir..\n");
             TextAyarlari.labelBosalt(label);
             TextAyarlari.textboxBosalt(soruEklemeEkraniPaneli);
-           
+
         } else {
             Dialogs.ozelMesaj(this, "Başvurunuz kabul edilmemiştir..\nLütfen bilgileri kontrol ediniz");
         }
 
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -317,6 +336,7 @@ public final class SoruEklemeEkrani extends javax.swing.JFrame implements IDuzen
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backIcon;
     private javax.swing.JTextField cevapText;
     private javax.swing.JMenuItem clear;
     private javax.swing.JTextField dersAdiText;

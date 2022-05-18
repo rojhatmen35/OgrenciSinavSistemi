@@ -18,4 +18,9 @@ public class ButonAyarlari {
     button.setBackground(originalBgColor);
     
     }
+    
+    public static void butonVisible(JButton button,boolean deger){
+    button.setVisible(deger);
+    
+    }
 }

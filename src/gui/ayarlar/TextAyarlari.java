@@ -3,6 +3,8 @@ package gui.ayarlar;
 import java.awt.Component;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -118,5 +120,33 @@ public class TextAyarlari {
             }
         }
         return true;
+    }
+    
+    //Stringi Binarye çeviriyor
+    public static String convertStringToBinary(String input) {
+
+        StringBuilder result = new StringBuilder();
+        char[] chars = input.toCharArray();
+        for (char aChar : chars) {
+            result.append(
+                    String.format("%8s", Integer.toBinaryString(aChar))   // char -> int, auto-cast
+                            .replaceAll(" ", "0")                         // zero pads
+            );
+        }
+        return result.toString();
+
+    }
+    
+    //Binaryi stringe çeviriyor
+    public static String binaryUnicodeToString(String binary) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+    int charCode;
+    for (int i = 0; i < binary.length(); i += 8) {
+        charCode = Integer.parseInt(binary.substring(i, i + 8), 2);
+        String returnChar = Character.toString((char) charCode);
+        stringBuilder.append(returnChar);
+    }
+    return stringBuilder.toString();
     }
 }
