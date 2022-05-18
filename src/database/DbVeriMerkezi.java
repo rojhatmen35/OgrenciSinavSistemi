@@ -12,9 +12,18 @@ public class DbVeriMerkezi extends DbConnection {
 
     //Soruların verileri;
     protected int sinifDuzeyi,uniteNo,konuNo,soruNo,kodNo,sigma;
-    protected String dersinAdi,uniteAdi,konuAdi,cevap;
+    protected String dersinAdi,uniteAdi,konuAdi,cevap,soru;
 
     
+    
+    public String getSoru() {
+        return soru;
+    }
+
+    public void setSoru(String soru) {
+        this.soru = soru;
+    }
+
     public String getCevap() {
         return cevap;
     }

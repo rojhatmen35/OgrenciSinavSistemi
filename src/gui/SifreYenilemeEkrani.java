@@ -6,7 +6,7 @@ import gui.ayarlar.TextAyarlari;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 
-public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenleyici {
+public final class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
     public SifreYenilemeEkrani() {
         initComponents();
@@ -37,7 +37,6 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
     private void initComponents() {
 
         sifreYenilemePanel = new javax.swing.JPanel();
-        geriIcon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tcNoText = new javax.swing.JTextField();
@@ -52,20 +51,13 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
         eskiSifreText = new javax.swing.JPasswordField();
         yeniSifreText = new javax.swing.JPasswordField();
         sifreYenileButon = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sifreYenilemePanel.setBackground(new java.awt.Color(204, 204, 204));
+        sifreYenilemePanel.setBackground(new java.awt.Color(56, 246, 245));
         sifreYenilemePanel.setMinimumSize(new java.awt.Dimension(730, 502));
         sifreYenilemePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        geriIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        geriIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                geriIconMouseClicked(evt);
-            }
-        });
-        sifreYenilemePanel.add(geriIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jLabel1.setText("Şifre Yenileme");
@@ -121,6 +113,7 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
 
         sifreYenileButon.setBackground(new java.awt.Color(153, 153, 255));
         sifreYenileButon.setText("Şifreyi Yenile");
+        sifreYenileButon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sifreYenileButon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 sifreYenileButonMouseEntered(evt);
@@ -132,6 +125,15 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
             }
         });
         sifreYenilemePanel.add(sifreYenileButon, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 430, 110, 40));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/backIcon.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        sifreYenilemePanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,16 +149,6 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void geriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_geriIconMouseClicked
-       /* if (isEnabledEskiSifreText()) {
-            ActionAyarlari.setVisible(this, new ayarlarEkrani());
-
-        } else {
-            ActionAyarlari.setVisible(this, new girisEkrani());
-        }*/
-
-    }//GEN-LAST:event_geriIconMouseClicked
-
     private void sifreYenileButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sifreYenileButonActionPerformed
         JOptionPane.showMessageDialog(this, "Güncellendi");
         if (isEnabledEskiSifreText()) {
@@ -170,6 +162,15 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
     private void sifreYenileButonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sifreYenileButonMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_sifreYenileButonMouseEntered
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+       if(isEnabledEskiSifreText()){
+       ActionAyarlari.setVisible(this, new AyarlarEkrani());
+       
+      }else{
+      ActionAyarlari.setVisible(this, new GirisEkrani());
+      }
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -208,7 +209,6 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField eskiSifreText;
-    private javax.swing.JLabel geriIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -216,6 +216,7 @@ public class SifreYenilemeEkrani extends javax.swing.JFrame implements IDuzenley
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JButton sifreYenileButon;
     private javax.swing.JPanel sifreYenilemePanel;
     private javax.swing.JTextField soruCevapText;

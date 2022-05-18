@@ -27,66 +27,66 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
     private void initComponents() {
 
         ayarlarEkraniPanel = new javax.swing.JPanel();
-        geriIcon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         telNoText = new javax.swing.JTextField();
-        telNoDegistirIcon = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sifreText = new javax.swing.JTextField();
-        sifreDegistirIcon = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        telUpdateIcon = new javax.swing.JLabel();
+        sifreUpdateIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ayarlarEkraniPanel.setBackground(new java.awt.Color(204, 204, 204));
+        ayarlarEkraniPanel.setBackground(new java.awt.Color(56, 246, 245));
         ayarlarEkraniPanel.setMinimumSize(new java.awt.Dimension(730, 502));
         ayarlarEkraniPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        geriIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        geriIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                geriIconMouseClicked(evt);
-            }
-        });
-        ayarlarEkraniPanel.add(geriIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Telefon Numaranız:");
-        ayarlarEkraniPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 220, 40));
+        ayarlarEkraniPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 220, 40));
 
-        telNoText.setBackground(new java.awt.Color(102, 102, 0));
         telNoText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         telNoText.setEnabled(false);
-        ayarlarEkraniPanel.add(telNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 210, 30));
-
-        telNoDegistirIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        telNoDegistirIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                telNoDegistirIconMouseClicked(evt);
-            }
-        });
-        ayarlarEkraniPanel.add(telNoDegistirIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, -1, -1));
+        ayarlarEkraniPanel.add(telNoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 210, 30));
 
         jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 51, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Şifreniz:");
-        ayarlarEkraniPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 170, 30));
+        ayarlarEkraniPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 170, 30));
 
-        sifreText.setBackground(new java.awt.Color(102, 102, 0));
         sifreText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sifreText.setText("************");
         sifreText.setEnabled(false);
-        ayarlarEkraniPanel.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 210, 30));
+        ayarlarEkraniPanel.add(sifreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 210, 30));
 
-        sifreDegistirIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        sifreDegistirIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/backIcon.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sifreDegistirIconMouseClicked(evt);
+                jLabel3MouseClicked(evt);
             }
         });
-        ayarlarEkraniPanel.add(sifreDegistirIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, -1));
+        ayarlarEkraniPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        telUpdateIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/updateIcon.png"))); // NOI18N
+        telUpdateIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        telUpdateIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                telUpdateIconMouseClicked(evt);
+            }
+        });
+        ayarlarEkraniPanel.add(telUpdateIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
+
+        sifreUpdateIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/icons/updateIcon.png"))); // NOI18N
+        sifreUpdateIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sifreUpdateIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sifreUpdateIconMouseClicked(evt);
+            }
+        });
+        ayarlarEkraniPanel.add(sifreUpdateIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,12 +101,17 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        ActionAyarlari.setVisible(this, new SinavEkrani());
+    }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void geriIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_geriIconMouseClicked
-        //   ActionAyarlari.setVisible(this, new hesapEkrani());
-    }//GEN-LAST:event_geriIconMouseClicked
+    private void sifreUpdateIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sifreUpdateIconMouseClicked
+        ActionAyarlari.setVisible(this, new SifreYenilemeEkrani());
+    }//GEN-LAST:event_sifreUpdateIconMouseClicked
+
     private int clickCounter = 0;
-    private void telNoDegistirIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_telNoDegistirIconMouseClicked
+    private void telUpdateIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_telUpdateIconMouseClicked
         if (this.clickCounter == 0) {
             telNoText.setEnabled(true);
             clickCounter++;
@@ -115,11 +120,7 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
             JOptionPane.showMessageDialog(this, "Telefon numarası güncellendi.");
             clickCounter = 0;
         }
-    }//GEN-LAST:event_telNoDegistirIconMouseClicked
-
-    private void sifreDegistirIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sifreDegistirIconMouseClicked
-        ActionAyarlari.setVisible(this, new SifreYenilemeEkrani());
-    }//GEN-LAST:event_sifreDegistirIconMouseClicked
+    }//GEN-LAST:event_telUpdateIconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -158,12 +159,12 @@ public class AyarlarEkrani extends javax.swing.JFrame implements IDuzenleyici {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ayarlarEkraniPanel;
-    private javax.swing.JLabel geriIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel sifreDegistirIcon;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField sifreText;
-    private javax.swing.JLabel telNoDegistirIcon;
+    private javax.swing.JLabel sifreUpdateIcon;
     private javax.swing.JTextField telNoText;
+    private javax.swing.JLabel telUpdateIcon;
     // End of variables declaration//GEN-END:variables
 }
